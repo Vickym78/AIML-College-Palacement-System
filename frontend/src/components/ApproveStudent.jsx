@@ -1,0 +1,159 @@
+import React, { useEffect, useState } from 'react';
+import AddUserTable from './AddUserTable';
+import Toast from './Toast';
+import ModalBox from './Modal';
+import axios from 'axios';
+import { BASE_URL } from '../config/backend_url';
+
+function ApproveStudent() {
+  document.title = 'APMS | Approve Students';
+
+  // student users store here
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // useState for toast display
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+
+  // useState for Modal display
+  const [showModal, setShowModal] = useState(false);
+  const [userEmailToProcess, setUserEmailToProcess] = useState(null);
+  const [modalBody, setModalBody] = useState('');
+  const [modalBtn, setModalBtn] = useState('');
+
+  // Fetch student users from the backend
+  const fetchUserDetails = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/admin/student-users`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        }
+      });
+
+      if (response.data) {
+        // filtering users who are not approved
+        const filteredUsers = response.data.studentUsers.filter(element => !element.studentProfile.isApproved);
+        setUsers(filteredUsers);
+      } else {
+        console.warn('Response does not contain studentUsers:', response.data);
+      }
+    } catch (error) {
+      console.error("Error fetching user details", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserDetails();
+  }, []);
+
+  // Handle delete user action
+  const handleDeleteUser = (email) => {
+    setUserEmailToProcess(email);
+    setModalBody(`Do you want to delete ${email}?`);
+    setModalBtn("Delete");
+    setShowModal(true);
+  };
+
+  // Confirm deletion of the user
+  const confirmDelete = async () => {
+    try {
+      const response = await axios.post(`${BASE_URL}/admin/student-delete-user`,
+        { email: userEmailToProcess },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          }
+        }
+      );
+      setShowModal(false);
+      if (response.data) {
+        setToastMessage(response.data.msg);
+        setShowToast(true);
+        fetchUserDetails(); // Refresh the user list
+      }
+    } catch (error) {
+      console.log("student => confirmDelete ==> ", error);
+      setToastMessage("Error deleting user");
+      setShowToast(true);
+    }
+  };
+
+  // Close the modal
+  const closeModal = () => {
+    setShowModal(false);
+    setUserEmailToProcess(null);
+  };
+
+  // Approve student user method
+  const handleApproveStudent = (email) => {
+    setUserEmailToProcess(email);
+    setModalBody(`Do you want to approve ${email}?`);
+    setModalBtn("Approve");
+    setShowModal(true);
+  };
+
+  // Confirm approval of the student
+  const confirmApproveStudent = async () => {
+    try {
+      const response = await axios.post(`${BASE_URL}/admin/student-approve`,
+        { email: userEmailToProcess }, // Use the state `userEmailToProcess`
+        {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+          }
+        }
+      );
+      if (response.data) {
+        setToastMessage(response.data.msg || "User approved successfully");
+        setShowToast(true);
+        fetchUserDetails(); // Refresh the user list after approval
+      }
+      setShowModal(false);
+    } catch (error) {
+      setToastMessage("Error approving user");
+      setShowToast(true);
+      console.log("handleApproveStudent => AddUsersTable.jsx ==> ", error);
+    }
+  };
+
+  return (
+    <>
+      {/* Toast Component */}
+      <Toast
+        show={showToast}
+        onClose={() => setShowToast(false)}
+        message={toastMessage}
+        delay={3000}
+        position="bottom-end"
+      />
+
+      {/* AddUserTable Component */}
+      <AddUserTable
+        users={users}
+        loading={loading}
+        handleDeleteUser={handleDeleteUser}
+        showModal={showModal}
+        closeModal={closeModal}
+        confirmDelete={confirmDelete}
+        userToDelete={userEmailToProcess}
+        userToAdd={"approve-student"}
+        handleApproveStudent={handleApproveStudent}
+      />
+
+      {/* ModalBox Component for Delete/Approve Confirmation */}
+      <ModalBox
+        show={showModal}
+        close={closeModal}
+        header={"Confirmation"}
+        body={modalBody}
+        btn={modalBtn}
+        confirmAction={modalBtn === "Delete" ? confirmDelete : confirmApproveStudent}
+      />
+    </>
+  );
+}
+
+export default ApproveStudent;
