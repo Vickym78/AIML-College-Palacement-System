@@ -254,12 +254,12 @@ function UpdateJobStatus() {
                                   </span>
                                 </div>
 
-                                <div>
+                                {/* <div>
                                   <span className="text-gray-700 font-bold">Number: </span>
                                   <span className="text-blue-500 font-bold">
                                     {currentUser?.number}
                                   </span>
-                                </div>
+                                </div> */}
 
                                 {
                                   currentUser?.uin && (
