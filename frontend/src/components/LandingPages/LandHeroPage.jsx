@@ -31,7 +31,7 @@ function LandingHeroPage() {
       <div className="relative z-20 max-w-6xl px-6 text-center">
         <div>
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Your <span className="text-blue-400">Campus Placement</span> Solution
+            Your <span className="text-blue-400">College Placement</span> Solution
           </h1>
 
           <p className="mt-4 text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">

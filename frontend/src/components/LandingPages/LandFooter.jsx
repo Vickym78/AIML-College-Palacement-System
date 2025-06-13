@@ -42,7 +42,7 @@ function LandFooter() {
         <div className="text-center">
           <p className="text-gray-600 text-sm">
             © {new Date().getFullYear()} <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500">
-              AIML Placement Management System
+              Campus Placement Management System
             </span>. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-gray-500">

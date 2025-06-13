@@ -40,7 +40,7 @@ function LandAbout() {
     <section id="about" className="bg-gray-50 py-16 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About APMS</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">About CPMS</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             "Developed by the AIML final-year students of Techno Main Salt Lake, Team Vitalis"
           </p>

@@ -120,24 +120,24 @@ export const SidebarData = [
       },
     ],
   },
-  {
-      title: "Notice",
-      icon: <FaEnvelopeOpenText />,
-      iconClosed: <RiArrowDownSFill />,
-      iconOpened: <RiArrowUpSFill />,
+  // {
+  //     title: "Notice",
+  //     icon: <FaEnvelopeOpenText />,
+  //     iconClosed: <RiArrowDownSFill />,
+  //     iconOpened: <RiArrowUpSFill />,
   
-      subNav: [
-        {
-          title: "List All",
-          path: "/admin/all-notice",
-          icon: <FaListUl />,
-          cName: "sub-nav",
-        },
-        {
-          title: "Send",
-          path: "/admin/send-notice",
-          icon: <RiPlayListAddLine />,
-        },
-      ],
-    },
+  //     subNav: [
+  //       {
+  //         title: "List All",
+  //         path: "/admin/all-notice",
+  //         icon: <FaListUl />,
+  //         cName: "sub-nav",
+  //       },
+  //       {
+  //         title: "Send",
+  //         path: "/admin/send-notice",
+  //         icon: <RiPlayListAddLine />,
+  //       },
+  //     ],
+  //   },
 ];

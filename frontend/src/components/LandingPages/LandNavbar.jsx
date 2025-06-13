@@ -52,7 +52,7 @@ function LandingNavbar() {
             <h1 className={`font-bold bg-gradient-to-r from-indigo-600 to-emerald-500 bg-clip-text text-transparent ${
               isScrolled ? 'text-xl' : 'text-2xl'
             } ${isMobile ? 'hidden sm:block' : ''}`}>
-              {isMobile ? 'CPMS' : 'AIML Placement Management System'}
+              {isMobile ? 'CPMS' : 'Campus Placement Management System'}
             </h1>
           </div>
 

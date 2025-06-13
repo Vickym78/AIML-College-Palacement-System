@@ -92,7 +92,7 @@ function Login() {
               />
             </div>
             <h1 className="mt-4 text-2xl font-bold text-white">Student Login</h1>
-            <p className="mt-1 text-blue-100">Welcome back to APMS Portal</p>
+            <p className="mt-1 text-blue-100">Welcome back to CPMS Portal</p>
           </div>
 
           {/* Form */}

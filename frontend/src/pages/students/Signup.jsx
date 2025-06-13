@@ -137,7 +137,7 @@ function Signup() {
               />
             </div>
             <h1 className="mt-4 text-2xl font-bold text-white">Student Registration</h1>
-            <p className="mt-1 text-blue-100">Join the APMS Portal</p>
+            <p className="mt-1 text-blue-100">Join the CPMS Portal</p>
           </div>
 
           <form onSubmit={handleSubmit} className="p-6 space-y-4">

@@ -151,7 +151,7 @@ function SendNotice() {
                         Select Receiver Role...
                       </option>
                       <option value="student">Student</option>
-                      <option value="tpo_admin">TPO</option>
+                      <option value="tpo_admin">Coodinator</option>
                     </Form.Select>
                   </FloatingLabel>
                 )}
