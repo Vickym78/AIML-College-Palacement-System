@@ -9,7 +9,7 @@ import ModalBox from '../Modal';
 import { BASE_URL } from '../../config/backend_url';
 
 function AddCompany() {
-  document.title = 'APMS | Add Company';
+  document.title = 'CPMS | Add Company';
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);

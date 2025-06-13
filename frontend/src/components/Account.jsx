@@ -10,7 +10,7 @@ import Toast from './Toast';
 import { BASE_URL } from '../config/backend_url';
 
 function Account() {
-  document.title = 'APMS | Account';
+  document.title = 'CPMS | Account';
 
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);

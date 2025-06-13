@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { BASE_URL } from '../../config/backend_url';
 
 function LoginSuperUser() {
-  document.title = 'APMS | Admin Login';
+  document.title = 'CPMS | Admin Login';
   const navigate = useNavigate();
 
   const [isLoading, setLoading] = useState(false);

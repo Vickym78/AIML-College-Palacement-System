@@ -7,7 +7,7 @@ import LandFooter from '../components/LandingPages/LandFooter';
 import Toast from '../components/Toast';
 
 function LandingPage() {
-  document.title = 'AIML Placement Management System';
+  document.title = 'Campus Placement Management System';
   const location = useLocation();
   const navigate = useNavigate();
 

@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 import { BASE_URL } from '../../config/backend_url';
 
 function LoginManagement() {
-  document.title = 'APMS | TPO Login';
+  document.title = 'CPMS | TPO Login';
 
   const navigate = useNavigate();
   const [isLoading, setLoading] = useState(false);

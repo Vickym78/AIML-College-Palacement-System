@@ -5,7 +5,7 @@ import NotificationBox from '../../components/Students/NotificationBox';
 // student 
 function Home() {
   // Set the page title
-  document.title = 'AIML Placement Management System | Student Dashboard';
+  document.title = 'Campus Placement Management System | Student Dashboard';
 
   return (
     <>

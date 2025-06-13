@@ -9,7 +9,7 @@ import Toast from './Toast';
 import { BASE_URL } from '../config/backend_url';
 
 function ViewUserData() {
-  document.title = 'APMS | User Details';
+  document.title = 'CPMS | User Details';
   const navigate = useNavigate();
 
   // userId but its userId

@@ -11,7 +11,7 @@ import { BASE_URL } from '../config/backend_url';
 import TablePlaceholder from './TablePlaceholder';
 
 function AddInternship() {
-  document.title = 'APMS | My Internships';
+  document.title = 'CPMS | My Internships';
   const navigate = useNavigate();
   const location = useLocation();
 

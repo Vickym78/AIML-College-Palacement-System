@@ -6,7 +6,7 @@ import { BASE_URL } from '../../config/backend_url';
 import AccordionPlaceholder from '../AccordionPlaceholder';
 
 function StudentYearAndBranchView() {
-  document.title = 'APMS | All Students';
+  document.title = 'CPMS | All Students';
 
   const [loading, setLoading] = useState(true);
 

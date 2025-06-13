@@ -15,7 +15,7 @@ import { PiEyeClosed } from "react-icons/pi";
 import { BASE_URL } from '../../config/backend_url';
 
 function UpdateJobStatus() {
-  document.title = 'APMS | Update Job Application Status';
+  document.title = 'CPMS | Update Job Application Status';
   const navigate = useNavigate();
 
   const { jobId } = useParams();

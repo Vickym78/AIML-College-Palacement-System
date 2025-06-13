@@ -9,7 +9,7 @@ import ModalBox from './Modal';
 import { BASE_URL } from '../config/backend_url';
 
 function ViewJobPost() {
-  document.title = 'APMS | View Job Post';
+  document.title = 'CPMS | View Job Post';
   const { jobId } = useParams();
   const navigate = useNavigate();
 
